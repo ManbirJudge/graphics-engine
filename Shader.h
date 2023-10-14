@@ -21,7 +21,7 @@ public:
 	void Delete();
 
 private:
-	void compileErrors(unsigned int shader, const char* type);
+	void checkErrors(unsigned int shader, const char* type);
 };
 
 #endif

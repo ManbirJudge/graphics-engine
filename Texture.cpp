@@ -2,7 +2,7 @@
 
 Texture::Texture(const char* imgPath, const char* texType, GLuint slot)
 {
-	type = texType;
+	Texture::type = texType;
 	Texture::slot = slot;
 
 	// variables for image width, height and number of color channels
@@ -17,9 +17,9 @@ Texture::Texture(const char* imgPath, const char* texType, GLuint slot)
 	glActiveTexture(GL_TEXTURE0 + Texture::slot);  // activating the texture in the intended slot
 	glBindTexture(GL_TEXTURE_2D, ID);  // binding the texture to modify it
 
-	// setting texture paramters
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);  // to pixelate when scalled up
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);  // to pixelate when scalled up
+	// setting texture parameters
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);  // to pixelate when scaled down
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);  // to pixelate when scaled up
 
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);  // to repeat the image
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);  // to repeat the image
@@ -70,20 +70,20 @@ Texture::Texture(const char* imgPath, const char* texType, GLuint slot)
 
 	glGenerateMipmap(GL_TEXTURE_2D);  // creating mipmap for the texture
 
-	stbi_image_free(pixels);  // relaesing the loaded image from memory
+	stbi_image_free(pixels);  // releasing the loaded image from memory
 	glBindTexture(GL_TEXTURE_2D, 0);  // unbinding the texture to prevent modifying it
 }
 
 void Texture::texSlot(Shader& shader, const char* uniform)
 {
-	shader.Activate(); // activiting the shader
+	shader.Activate(); // activating the shader
 	glUniform1i(glGetUniformLocation(shader.ID, uniform), Texture::slot);  // setting the image to the uniform
 }
 
 void Texture::Bind()
 {
 	glActiveTexture(GL_TEXTURE0 + Texture::slot);
-	glBindTexture(GL_TEXTURE_2D, ID);
+	glBindTexture(GL_TEXTURE_2D, Texture::ID);
 }
 
 void Texture::Unbind()
@@ -93,5 +93,5 @@ void Texture::Unbind()
 
 void Texture::Delete()
 {
-	glDeleteTextures(1, &ID);
+	glDeleteTextures(1, &(Texture::ID));
 }

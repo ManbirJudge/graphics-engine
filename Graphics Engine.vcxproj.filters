@@ -19,6 +19,9 @@
     <Filter Include="Git">
       <UniqueIdentifier>{c86b9aa5-4076-4f92-9594-545b84092190}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\Textures">
+      <UniqueIdentifier>{2416f2fd-3824-4887-8dfa-3eb6981ad81e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -82,7 +85,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="default.frag">
+    <None Include="phong.frag">
       <Filter>Resource Files\Shaders</Filter>
     </None>
     <None Include="default.vert">
@@ -99,14 +102,47 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="floor.jpg">
-      <Filter>Resource Files</Filter>
+    <Image Include="floor__height.jpg">
+      <Filter>Resource Files\Textures</Filter>
     </Image>
     <Image Include="floor__spec.jpg">
-      <Filter>Resource Files</Filter>
+      <Filter>Resource Files\Textures</Filter>
     </Image>
-    <Image Include="floor__height.jpg">
-      <Filter>Resource Files</Filter>
+    <Image Include="gradient__color.jpg">
+      <Filter>Resource Files\Textures</Filter>
+    </Image>
+    <Image Include="floor__color.jpg">
+      <Filter>Resource Files\Textures</Filter>
+    </Image>
+    <Image Include="Substance_Graph_AmbientOcclusion.jpg">
+      <Filter>Resource Files\Textures</Filter>
+    </Image>
+    <Image Include="Substance_Graph_BaseColor.jpg">
+      <Filter>Resource Files\Textures</Filter>
+    </Image>
+    <Image Include="Substance_Graph_Height.jpg">
+      <Filter>Resource Files\Textures</Filter>
+    </Image>
+    <Image Include="Substance_Graph_Normal.jpg">
+      <Filter>Resource Files\Textures</Filter>
+    </Image>
+    <Image Include="Substance_Graph_Roughness.jpg">
+      <Filter>Resource Files\Textures</Filter>
+    </Image>
+    <Image Include="Ground_Dirt_009_AmbientOcclusion.jpg">
+      <Filter>Resource Files\Textures</Filter>
+    </Image>
+    <Image Include="Ground_Dirt_009_BaseColor.jpg">
+      <Filter>Resource Files\Textures</Filter>
+    </Image>
+    <Image Include="Ground_Dirt_009_Height.png">
+      <Filter>Resource Files\Textures</Filter>
+    </Image>
+    <Image Include="Ground_Dirt_009_Normal.jpg">
+      <Filter>Resource Files\Textures</Filter>
+    </Image>
+    <Image Include="Ground_Dirt_009_Roughness.jpg">
+      <Filter>Resource Files\Textures</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>

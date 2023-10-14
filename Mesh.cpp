@@ -7,26 +7,26 @@ Mesh::Mesh(std::vector<Vertex>& vertices, std::vector<GLuint>& indices, std::vec
 	Mesh::textures = textures;
 
 	// bind vertex array object to modify it
-	Mesh::VAO_.Bind();
+	Mesh::VAO.Bind();
 
 	// vertex buffer object and element buffer object
 	VBO VBO(vertices);
 	EBO EBO(indices);
 
 	// linking VAO to VBO
-	VAO_.LinkAtrrib(VBO, 0, 3, GL_FLOAT, sizeof(Vertex), (void*)(0 * sizeof(float)));  // layout 0 -> position
-	VAO_.LinkAtrrib(VBO, 1, 3, GL_FLOAT, sizeof(Vertex), (void*)(3 * sizeof(float)));  // layout 1 -> normal
-	VAO_.LinkAtrrib(VBO, 2, 3, GL_FLOAT, sizeof(Vertex), (void*)(6 * sizeof(float)));  // layout 2 -> color
-	VAO_.LinkAtrrib(VBO, 3, 2, GL_FLOAT, sizeof(Vertex), (void*)(9 * sizeof(float)));  // layout 3 -> texture coordinates
+	VAO.LinkAtrib(VBO, 0, 3, GL_FLOAT, sizeof(Vertex), (void*)(0 * sizeof(float)));  // layout 0 -> position
+	VAO.LinkAtrib(VBO, 1, 3, GL_FLOAT, sizeof(Vertex), (void*)(3 * sizeof(float)));  // layout 1 -> normal
+	VAO.LinkAtrib(VBO, 2, 3, GL_FLOAT, sizeof(Vertex), (void*)(6 * sizeof(float)));  // layout 2 -> color
+	VAO.LinkAtrib(VBO, 3, 2, GL_FLOAT, sizeof(Vertex), (void*)(9 * sizeof(float)));  // layout 3 -> texture coordinates
 
 	// unbinding all to prevent modifying them
-	VAO_.Unbind();
+	VAO.Unbind();
 	VBO.Unbind();
 	EBO.Unbind();
 }
 
-void Mesh::Move(glm::vec3 tranlsation) {
-	Mesh::position = Mesh::position + tranlsation;
+void Mesh::Move(glm::vec3 translation) {
+	Mesh::position = Mesh::position + translation;
 }
 
 void Mesh::Render(
@@ -34,17 +34,17 @@ void Mesh::Render(
 	Camera& camera
 
 	// glm::mat4 matrix,
-	// glm::vec3 tranlsation,
+	// glm::vec3 translation,
 	// glm::quat rotation,
 	// glm::vec3 scale
 )
 {
 	shader.Activate();
-	VAO_.Bind();
+	VAO.Bind();
 
 	unsigned int numDiffuse = 0;
 	unsigned int numSpecular = 0;
-	unsigned int numHeight = 0;
+	unsigned int numNormal = 0;
 	
 	for (size_t i{ 0 }; i < textures.size(); i++) 
 	{
@@ -59,9 +59,9 @@ void Mesh::Render(
 		{
 			num = std::to_string(numSpecular++);
 		}
-		else if(type == "height")
+		else if(type == "normal")
 		{
-			num = std::to_string(numHeight++);
+			num = std::to_string(numNormal++);
 		}
 
 		textures[i].texSlot(shader, (type + num).c_str());

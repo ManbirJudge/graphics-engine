@@ -175,15 +175,26 @@
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />
-    <None Include="default.frag" />
+    <None Include="phong.frag" />
     <None Include="default.vert" />
     <None Include="light.frag" />
     <None Include="light.vert" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="floor.jpg" />
+    <Image Include="floor__color.jpg" />
     <Image Include="floor__height.jpg" />
     <Image Include="floor__spec.jpg" />
+    <Image Include="gradient__color.jpg" />
+    <Image Include="Ground_Dirt_009_AmbientOcclusion.jpg" />
+    <Image Include="Ground_Dirt_009_BaseColor.jpg" />
+    <Image Include="Ground_Dirt_009_Height.png" />
+    <Image Include="Ground_Dirt_009_Normal.jpg" />
+    <Image Include="Ground_Dirt_009_Roughness.jpg" />
+    <Image Include="Substance_Graph_AmbientOcclusion.jpg" />
+    <Image Include="Substance_Graph_BaseColor.jpg" />
+    <Image Include="Substance_Graph_Height.jpg" />
+    <Image Include="Substance_Graph_Normal.jpg" />
+    <Image Include="Substance_Graph_Roughness.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="roboto.ttf" />

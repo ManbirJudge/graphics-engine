@@ -2,10 +2,10 @@
 
 VAO::VAO()
 {
-	glGenVertexArrays(1, &ID);
+	glGenVertexArrays(1, &(VAO::ID));
 }
 
-void VAO::LinkAtrrib(
+void VAO::LinkAtrib(
 	VBO& VBO, 
 	GLuint layout,
 	GLuint numComponents, 
@@ -24,7 +24,7 @@ void VAO::LinkAtrrib(
 
 void VAO::Bind()
 {
-	glBindVertexArray(ID);
+	glBindVertexArray(VAO::ID);
 }
 
 void VAO::Unbind()
@@ -34,5 +34,5 @@ void VAO::Unbind()
 
 void VAO::Delete()
 {
-	glDeleteVertexArrays(1, &ID);
+	glDeleteVertexArrays(1, &(VAO::ID));
 }

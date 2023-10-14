@@ -11,7 +11,7 @@ public:
 
 	VAO();
 
-	void LinkAtrrib(
+	void LinkAtrib(
 		VBO& VBO, 
 		GLuint layout, 
 		GLuint numComponents, 

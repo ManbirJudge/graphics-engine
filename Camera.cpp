@@ -14,7 +14,7 @@ Camera::Camera(int width, int height, glm::vec3 position, float yaw, float pitch
 
 void Camera::Matrix(Shader& shader, const char* uniform) 
 {
-	glUniformMatrix4fv(glGetUniformLocation(shader.ID, uniform), 1, GL_FALSE, glm::value_ptr(cameraMatrix));  // assignign value to the uniform
+	glUniformMatrix4fv(glGetUniformLocation(shader.ID, uniform), 1, GL_FALSE, glm::value_ptr(cameraMatrix));  // assigning value to the uniform
 }
 
 void Camera::updateMatrix(float FOVMag, float nearPlane, float farPlane) 
@@ -68,7 +68,7 @@ void Camera::Inputs(GLFWwindow* window)
 
 		glfwGetCursorPos(window, &mouseX, &mouseY);
 
-		std::cout << mouseX << " " << mouseY << std::endl;
+		// std::cout << mouseX << " " << mouseY << std::endl;
 
 		mouseX = (mouseX - (width / 2)) / width;
 		mouseY = (mouseY - (height / 2)) / height;

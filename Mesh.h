@@ -20,7 +20,7 @@ public:
 	glm::vec3 rotation = glm::vec3(0.f);
 	glm::vec3 scale = glm::vec3(1.f, 1.f, 1.f);
 
-	VAO VAO_;
+	VAO VAO;
 
 	Mesh(std::vector<Vertex>& vertices, std::vector<GLuint>& indices, std::vector<Texture>& textures);
 
